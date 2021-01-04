@@ -24,17 +24,11 @@ class App extends React.Component {
   render() {
     if(this.state.isReady) {
       return (
-        <div>
-          <div className="container">
-            <h2 className="site-title">Ms. Dean's Number Fact of the Day</h2>
-            <MathFact text={this.state.mathFacts}/>
-            {/* <div className="buttons-container">
-              <button>RANDOM MATH FACT</button>
-              <button>RANDOM NUMBER TRIVIA</button>
-            </div> */}
-            <div className="gif-source">
-            Background gif created by <a href="https://linjacqueline.com/" target="_blank" rel="noreferrer">Jacqueline Jing Lin</a> 
-            </div>
+        <div className="container">
+          <h2 className="site-title">Ms. Dean's Number Fact of the Day</h2>
+          <MathFact text={this.state.mathFacts}/>
+          <div className="gif-source">
+          Background gif created by <a href="https://linjacqueline.com/" target="_blank" rel="noreferrer">Jacqueline Jing Lin</a> 
           </div>
         </div>
       )

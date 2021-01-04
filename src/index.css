@@ -1,3 +1,7 @@
+html > body > #root > .container {
+  height: 100vh;
+}
+
 body {
   margin: 0;
   font-family: "Fredoka One", "Roboto", sans-serif;
@@ -10,7 +14,6 @@ body {
 }
 
 .container {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,18 +32,13 @@ body {
   border: solid 0.25rem black;
 }
 
-.buttons-container {
-  padding: 1rem;
-}
-
-.buttons-container button {
-  padding: 0.25rem;
-  margin: 0.25rem;
-}
-
 .card-title {
   text-align: center;
   font-size: 20px;
+}
+
+.gif-source {
+  text-align: center;
 }
 
 .gif-source a {
