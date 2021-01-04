@@ -33,7 +33,7 @@ class App extends React.Component {
               <button>RANDOM NUMBER TRIVIA</button>
             </div> */}
             <div className="gif-source">
-            Background gif created by <a href="https://linjacqueline.com/" target="_blank">Jacqueline Jing Lin</a> 
+            Background gif created by <a href="https://linjacqueline.com/" target="_blank" rel="noreferrer">Jacqueline Jing Lin</a> 
             </div>
           </div>
         </div>
