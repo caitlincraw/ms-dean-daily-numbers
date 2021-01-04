@@ -1,17 +1,55 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import MathFact from './MathFact';
+
+class App extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {mathFacts: [],
+                  isReady: false}
+  }
+
+  componentDidMount(){
+    fetch("http://numbersapi.com/random/trivia?json")
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      this.setState({mathFacts: data.text,
+                    isReady: true})
+    })
+  }
+
+  render() {
+    if(this.state.isReady) {
+      return (
+        <div>
+          <div className="container">
+            <h2 className="site-title">Ms. Dean's Number Fact of the Day</h2>
+            <MathFact text={this.state.mathFacts}/>
+            {/* <div className="buttons-container">
+              <button>RANDOM MATH FACT</button>
+              <button>RANDOM NUMBER TRIVIA</button>
+            </div> */}
+            <div className="gif-source">
+            Background gif created by <a href="https://linjacqueline.com/" target="_blank">Jacqueline Jing Lin</a> 
+            </div>
+          </div>
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          <h1>Hold up, a random trivia fact about numbers is about to appear....</h1>
+        </div>
+      )
+    }
+  }
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <App />,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
